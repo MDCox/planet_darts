@@ -1,7 +1,3 @@
-$.ajaxSetup({
-  'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript") }
-});
-
 var marker = null;
 var iceland = new google.maps.LatLng(64.841559,-22.628168);
 
@@ -181,20 +177,20 @@ function placeMarker(position, map, marker) {
 
 function submitGuess() {
   if (marker === null) {
-    alert("Guess first, dum-dum!")
+    alert("Guess first, dum-dum!");
   } else {
-
-    $.ajax({
-    type: 'POST',
-    url: '/scores',
-    dataType: 'json',
-    data: {score: "Hi"},
-    success: function(json, status, xhr){
-      // $("#show_message").html(json.message)
-    }
-  });
-    alert(marker.position.lat() + " latitude, " + marker.position.lng() + " longitude to " + iceland.lat() + " latitude, " + iceland.lng() + " longitude");
+    var $form = $('#new_score')
+    $('#score_coord1').val(marker.position.lat());
+    $('#score_coord2').val(marker.position.lng());
   }
 };
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+$(document).ready(function() {
+  $('#new_score').submit(function(event) {
+    submitGuess();
+    alert("We made it")
+    return true;
+  });
+});
