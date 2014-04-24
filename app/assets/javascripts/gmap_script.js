@@ -142,7 +142,7 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var location = new google.maps.LatLng(<%= @start_coord %>);
+  var location = new google.maps.LatLng( gon.start_lat, gon.start_long );
 
   var panoramaOptions = {
     position: location,

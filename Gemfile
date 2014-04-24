@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'gon'
 
 group :development do
   gem 'better_errors'

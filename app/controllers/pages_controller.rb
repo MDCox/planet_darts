@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @start_coord = Location.all.sample
+    location = Location.all.sample
+    gon.start_lat = location.latitude.to_f
+    gon.start_long = location.longitude.to_f
   end
-
-private
-  start_coord
 end
