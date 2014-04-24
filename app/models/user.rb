@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     num_of_scores = scores.length
 
     scores.each do |score|
-      score_total += score
+      score_total += score.points
     end
 
     return (score_total / num_of_scores)
