@@ -1,5 +1,5 @@
 var marker = null;
-var iceland = new google.maps.LatLng(64.841559,-22.628168);
+var location = new google.maps.LatLng( gon.start_lat, gon.start_long );
 
 function initialize() {
   var paper_format = [
@@ -144,9 +144,8 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-
   var panoramaOptions = {
-    position: iceland,
+    position: location,
     pov: {
       heading: 34,
       pitch: 10
@@ -181,7 +180,7 @@ function submitGuess() {
   } else {
     var $form = $('#new_score')
     $('#score_coord1').val(marker.position);
-    $('#score_coord2').val(iceland);
+    $('#score_coord2').val(location);
   }
 };
 
