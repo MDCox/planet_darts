@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: planet_darts_development
+
+test:
+  adapter: postgresql
+  database: planet_darts_test
