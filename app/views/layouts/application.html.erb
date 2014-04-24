@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<div class="navbar navbar-default navbar-fixed-top">
+  <%= link_to "Planet Darts", root_url, class: "navbar-text pull-left" %>
+  <% if current_user %>
+    <%= link_to "Log Out", session_path("current"), method: "delete", class: "navbar-text pull-right" %>
+  <div class="navbar-text pull-right">
+    Logged in as <%= current_user.name %>
+  </div>
+  <% else %>
+    <%= link_to "Log In", new_session_path, class: "navbar-text pull-right" %>
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>
