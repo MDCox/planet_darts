@@ -180,8 +180,8 @@ function submitGuess() {
     alert("Guess first, dum-dum!");
   } else {
     var $form = $('#new_score')
-    $('#score_coord1').val(marker.position.lat());
-    $('#score_coord2').val(marker.position.lng());
+    $('#score_coord1').val(marker.position);
+    $('#score_coord2').val(iceland);
   }
 };
 
@@ -190,7 +190,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $(document).ready(function() {
   $('#new_score').submit(function(event) {
     submitGuess();
-    alert("We made it")
     return true;
   });
 });
