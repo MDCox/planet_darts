@@ -1,34 +1,100 @@
 function initialize() {
   var paper_format = [
     {
-        "featureType": "administrative",
+        "featureType": "water",
         "stylers": [
             {
-                "visibility": "off"
+                "color": "#021019"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "stylers": [
+            {
+                "color": "#08304b"
             }
         ]
     },
     {
         "featureType": "poi",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "simplified"
+                "color": "#0c4152"
+            },
+            {
+                "lightness": 5
             }
         ]
     },
     {
-        "featureType": "road",
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "visibility": "simplified"
+                "color": "#000000"
             }
         ]
     },
     {
-        "featureType": "water",
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
         "stylers": [
             {
-                "visibility": "simplified"
+                "color": "#0b434f"
+            },
+            {
+                "lightness": 25
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#0b3d51"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 13
             }
         ]
     },
@@ -36,95 +102,31 @@ function initialize() {
         "featureType": "transit",
         "stylers": [
             {
-                "visibility": "simplified"
+                "color": "#146474"
             }
         ]
     },
     {
-        "featureType": "landscape",
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "visibility": "simplified"
+                "color": "#000000"
             }
         ]
     },
     {
-        "featureType": "road.highway",
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
         "stylers": [
             {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "color": "#5f94ff"
+                "color": "#144b53"
             },
             {
-                "lightness": 26
+                "lightness": 14
             },
             {
-                "gamma": 5.86
-            }
-        ]
-    },
-    {},
-    {
-        "featureType": "road.highway",
-        "stylers": [
-            {
-                "weight": 0.6
-            },
-            {
-                "saturation": -85
-            },
-            {
-                "lightness": 61
-            }
-        ]
-    },
-    {
-        "featureType": "road"
-    },
-    {},
-    {
-        "featureType": "landscape",
-        "stylers": [
-            {
-                "hue": "#0066ff"
-            },
-            {
-                "saturation": 74
-            },
-            {
-                "lightness": 100
+                "weight": 1.4
             }
         ]
     }
@@ -138,10 +140,17 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var marker = new google.maps.Marker({
-      position: centerPosition,
-      map: map,
-      title: 'Why hello there!'
+  google.maps.event.addListener(map, 'click', function(e) {
+    placeMarker(e.latLng, map);
   });
 }
+
+function placeMarker(position, map) {
+  var marker = new google.maps.Marker({
+    position: position,
+    map: map
+  });
+  map.panTo(position);
+}
+
 google.maps.event.addDomListener(window, 'load', initialize);
