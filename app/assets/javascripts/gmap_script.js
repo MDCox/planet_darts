@@ -1,5 +1,7 @@
+var marker = null;
+var iceland = new google.maps.LatLng(64.841559,-22.628168);
+
 function initialize() {
-  var marker = null;
   var paper_format = [
     {
         "featureType": "water",
@@ -142,7 +144,7 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var iceland = new google.maps.LatLng(64.841559,-22.628168);
+
   var panoramaOptions = {
     position: iceland,
     pov: {
@@ -172,5 +174,13 @@ function placeMarker(position, map, marker) {
   map.panTo(position);
   return marker;
 }
+
+function submitGuess() {
+  if (marker === null) {
+    alert("Guess first, dum-dum!")
+  } else {
+    alert(marker.position.lat() + " latitude, " + marker.position.lng() + " longituge to " + iceland.lat() + " latitude, " + iceland.lng() + " longituge");
+  }
+};
 
 google.maps.event.addDomListener(window, 'load', initialize);
