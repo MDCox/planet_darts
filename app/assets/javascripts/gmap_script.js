@@ -137,6 +137,7 @@ function initialize() {
   var mapOptions = {
     center: centerPosition,
     zoom: 1,
+    streetViewControl: false,
     styles: paper_format
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -154,7 +155,9 @@ function placeMarker(position, map, marker) {
   }
   marker = new google.maps.Marker({
     position: position,
-    map: map
+    map: map,
+    draggable:true,
+    animation: google.maps.Animation.DROP
   });
   map.panTo(position);
   return marker;
