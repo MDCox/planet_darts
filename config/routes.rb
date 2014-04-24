@@ -1,7 +1,6 @@
 PlanetDarts::Application.routes.draw do
-  devise_for :users
-
   root "pages#index"
+  devise_for :users
   resources :pages, only: [:index]
   resources :users
   resources :sessions

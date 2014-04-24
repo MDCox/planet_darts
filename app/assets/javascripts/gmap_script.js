@@ -1,5 +1,5 @@
 var marker = null;
-var location = new google.maps.LatLng( gon.start_lat, gon.start_long );
+var beginning = new google.maps.LatLng( gon.start_lat, gon.start_long );
 
 function initialize() {
   var paper_format = [
@@ -145,7 +145,7 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
   var panoramaOptions = {
-    position: location,
+    position: beginning,
     pov: {
       heading: 34,
       pitch: 10
@@ -180,7 +180,7 @@ function submitGuess() {
   } else {
     var $form = $('#new_score')
     $('#score_coord1').val(marker.position);
-    $('#score_coord2').val(location);
+    $('#score_coord2').val(beginning);
   }
 };
 
