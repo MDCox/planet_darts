@@ -3,6 +3,6 @@ PlanetDarts::Application.routes.draw do
 
   root "pages#index"
   resources :pages, only: [:index]
-  resources :users
+  resources :users, only: [:new, :create]
   resources :sessions
 end
