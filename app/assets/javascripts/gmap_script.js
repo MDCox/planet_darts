@@ -142,9 +142,9 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var fenway = new google.maps.LatLng(42.345573,-71.098326);
+  var iceland = new google.maps.LatLng(64.841559,-22.628168);
   var panoramaOptions = {
-    position: fenway,
+    position: iceland,
     pov: {
       heading: 34,
       pitch: 10
