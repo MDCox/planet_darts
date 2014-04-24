@@ -1,1 +1,8 @@
-#map-canvas { height: 100% }
+#map-canvas {
+  height: 100%;
+}
+
+.headline {
+  margin-top: 60px;
+  padding-left: 20px;
+}
