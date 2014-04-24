@@ -8,6 +8,14 @@
   z-index: 3;
 }
 
+#guess {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  float: right;
+  z-index: 4;
+}
+
 #pano {
   position: fixed;
   top: 0px;
