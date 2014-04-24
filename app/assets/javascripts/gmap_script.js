@@ -142,9 +142,10 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-  var iceland = new google.maps.LatLng(64.841559,-22.628168);
+  var location = new google.maps.LatLng( gon.start_lat, gon.start_long );
+
   var panoramaOptions = {
-    position: iceland,
+    position: location,
     pov: {
       heading: 34,
       pitch: 10

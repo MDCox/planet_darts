@@ -6,8 +6,8 @@ describe User do
   describe "avg_score" do
     it "should return average score" do
       user = User.create()
-      score1 = Score.create(score: 10)
-      score2 = Score.create(score: 0)
+      score1 = Score.create(points: 10)
+      score2 = Score.create(points: 0)
 
       user.scores << score1
       user.scores << score2
