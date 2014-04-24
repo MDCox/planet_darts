@@ -5,4 +5,5 @@ PlanetDarts::Application.routes.draw do
   resources :pages, only: [:index]
   resources :users
   resources :sessions
+  resources :scores, only: [:create]
 end
