@@ -1,4 +1,5 @@
 function initialize() {
+  var marker = null;
   var paper_format = [
     {
         "featureType": "water",
@@ -141,16 +142,22 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
   google.maps.event.addListener(map, 'click', function(e) {
-    placeMarker(e.latLng, map);
+    marker = placeMarker(e.latLng, map, marker);
+
   });
 }
 
-function placeMarker(position, map) {
-  var marker = new google.maps.Marker({
+function placeMarker(position, map, marker) {
+  if(marker !== null) {
+    marker.setMap(null);
+    marker = null;
+  }
+  marker = new google.maps.Marker({
     position: position,
     map: map
   });
   map.panTo(position);
+  return marker;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
