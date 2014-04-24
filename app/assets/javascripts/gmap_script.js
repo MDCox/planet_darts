@@ -130,11 +130,18 @@ function initialize() {
     }
 ]
 
+  var centerPosition = new google.maps.LatLng(0,0);
   var mapOptions = {
-    center: new google.maps.LatLng(-34.397, 150.644),
-    zoom: 8,
+    center: centerPosition,
+    zoom: 1,
     styles: paper_format
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: centerPosition,
+      map: map,
+      title: 'Why hello there!'
+  });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
