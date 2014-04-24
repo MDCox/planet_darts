@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development do
   gem 'better_errors'
