@@ -1,5 +1,16 @@
 #map-canvas {
   height: 100%;
+  cursor: pointer;
+  display: block;
+  float: right;
+  z-index: 3;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+#container {
+  width: 800px;
 }
 
 .headline {
@@ -10,3 +21,4 @@
 .form_buddy {
   padding-left: 20px;
 }
+
