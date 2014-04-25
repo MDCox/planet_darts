@@ -1,12 +1,11 @@
 <div id="map_buddy">
-  <div style='width: 800px;'>
-    <div id="guess" style='top: 60px; left: 365px; position: relative;'>
-      <%= form_for Score.new do |f| %>
-        <%= f.hidden_field :coord1, :value => 0 %>
-        <%= f.hidden_field :coord2, :value => 0 %>
-        <%= f.submit "Make Guess" %>
-      <% end %>
-    </div>
   <div id="map-canvas"></div>
   <div id="pano"></div>
 </div>
+  <div id="guess" style='top: 60px; left: 365px; position: relative;'>
+    <%= form_for Score.new do |f| %>
+      <%= f.hidden_field :coord1, :value => 0 %>
+      <%= f.hidden_field :coord2, :value => 0 %>
+      <%= f.submit "Make Guess" %>
+    <% end %>
+  </div>
