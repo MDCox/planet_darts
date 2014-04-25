@@ -3,7 +3,9 @@ class ScoresController < ApplicationController
     points = calc_points(score_params[:coord1], score_params[:coord2])
     score = Score.new(points: points)
     @distance = calc_distance(score_params[:coord1], score_params[:coord2])
-    current_user.scores << score
+    if current_user
+      current_user.scores << score
+    end
     respond_to do |f|
       f.js
       f.html { redirect_to root_path}
