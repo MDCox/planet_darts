@@ -1,28 +1,31 @@
-== README
+= Planet Darts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Planet Darts is a web app clone of GeoGuessr that uses the Google Maps API. In addition to guessing the location of the google streetview, it also allows users to sign up and keep track of their scores and for them to create new geo locaitons for others to guess.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Features Used
+Ruby
+Rails
+Google Maps API
+
+
+==== Authors
+Tara Nelson - talune
+Ben Birdsall - bwbirdsall
+Matt Cox - MDCox
+Alex Wood - roguespambot
+Vincent Rotter - fencedin
+
+
+==== License
+Planet Darts is provided under the MIT License.
+
+
+==== User Stories for development
+* user should be able to create an account to keep track of their stats
+* user should be shown a random streetview location and a world map
+* user should be able to move around on streetview to figure out where they are
+* user should be able to click world map and a marker should appear for their guess
+* user should be able to check to see how close they were on a map and get a score based on distance
+* user should be able to check their average score and previous guess scores
+* user should be able to add a new geo location for others to guess
