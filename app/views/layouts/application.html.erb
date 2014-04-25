@@ -6,13 +6,12 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false">
+    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['APIKEY']%>&amp;sensor=false">
   </script>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="navbar navbar-default navbar-fixed-top">
   <%= link_to "Planet Darts", root_url, class: "navbar-text pull-left" %>
   <% if current_user %>
