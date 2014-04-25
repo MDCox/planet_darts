@@ -11,8 +11,10 @@ class User < ActiveRecord::Base
     score_total = 0
     num_of_scores = scores.length
 
-    scores.each do |score|
-      score_total += score.points
+    if scores.nil?
+      scores.each do |score|
+        score_total += score.points
+      end
     end
 
     if num_of_scores == 0

@@ -69,4 +69,10 @@
   padding-left: 20px;
 }
 
-
+#location_buddy {
+  left: 15px;
+  margin-top: 60px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

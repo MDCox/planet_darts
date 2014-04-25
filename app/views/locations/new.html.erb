@@ -1,0 +1,13 @@
+<div id="location_buddy">
+  <h2>Add New Location</h2>
+  <div class="col-md-3">
+    <%= form_for @location do |f| %>
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude, class: 'form-control' %>
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude, class: 'form-control' %>
+      <br/>
+      <%= f.submit class: 'btn btn-info' %>
+    <% end %>
+  </div>
+</div>
