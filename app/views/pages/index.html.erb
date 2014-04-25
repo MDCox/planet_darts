@@ -1,11 +1,24 @@
 <div id="map_buddy">
   <div id="guess">
-  <%= form_for Score.new do |f| %>
-    <%= f.hidden_field :coord1, :value => 0 %>
-    <%= f.hidden_field :coord2, :value => 0 %>
-    <%= f.submit "Make Guess", class: "btn btn-primary" %>
-  <% end %>
-</div>
+    <%= form_for Score.new do |f| %>
+      <%= f.hidden_field :coord1, :value => 0 %>
+      <%= f.hidden_field :coord2, :value => 0 %>
+      <%= f.submit "Make Guess", class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div id="map-canvas"></div>
   <div id="pano"></div>
+  <div id="guessMap"></div>
+  <div class="text-center" id="guessScore">
+    <br />
+    <div id="scoreValue">You Scored: </div>
+    <br />
+    <div id="distance">Distance from Target: </div>
+    <br />
+    <%= link_to "Throw another Dart!", root_url, class: 'btn btn-primary' %>
+  </div>
 </div>
+
+
+
+

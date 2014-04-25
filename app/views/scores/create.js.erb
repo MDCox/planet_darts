@@ -1,0 +1,4 @@
+$('#guessMap').css('zIndex',6);
+$('#guessScore').css('zIndex',7);
+$('#scoreValue').append('<%= current_user.scores.last.points %>');
+$('#distance').append('<%= @distance.to_i %> mi');
