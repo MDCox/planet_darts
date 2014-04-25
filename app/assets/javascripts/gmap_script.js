@@ -138,6 +138,7 @@ function initialize() {
   var centerPosition = new google.maps.LatLng(0,0);
   var mapOptions = {
     center: centerPosition,
+    mapTypeControl: false,
     zoom: 1,
     streetViewControl: false,
     styles: paper_format
