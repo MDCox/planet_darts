@@ -12,22 +12,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-default navbar-fixed-top">
-  <%= link_to "Planet Darts", root_url, class: "navbar-text pull-left" %>
-  <% if current_user %>
-    <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "navbar-text pull-right" %>
-  <div class="navbar-text pull-right">
-    Logged in as <%= current_user.email %>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <%= link_to "Planet Darts", root_url, class: "navbar-text pull-left" %>
+    <% if current_user %>
+      <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "navbar-text pull-right" %>
+    <div class="navbar-text pull-right">
+      Logged in as <%= current_user.email %>
+    </div>
+    <% else %>
+      <%= link_to "Log In", new_session_path, class: "navbar-text pull-right" %>
+      <%= link_to "New User?", new_user_path, class: "navbar-text pull-right" %>
+    <% end %>
   </div>
-  <% else %>
-    <%= link_to "Log In", new_session_path, class: "navbar-text pull-right" %>
-    <%= link_to "New User?", new_user_path, class: "navbar-text pull-right" %>
-  <% end %>
-</div>
 
-<% flash[:alert] %>
-<% flash[:notice] %>
-<%= yield %>
+  <% flash[:alert] %>
+  <% flash[:notice] %>
+  <%= yield %>
+
+  <div class="navbar navbar-default navbar-fixed-bottom">
+    <% if !current_user.nil? %>
+      <div class="navbar-text">
+        Your average score per guess: <span id="avg_score"><%= current_user.avg_score %></span>
+      </div>
+    <% end %>
+  </div>
 
 </body>
 </html>
