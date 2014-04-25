@@ -17,6 +17,10 @@
   z-index: 1;
 }
 
+#pano text {
+  display: none;
+}
+
 #map_buddy {
   margin-top: 50px;
   position: relative;
