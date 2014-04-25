@@ -138,6 +138,7 @@ function initialize() {
   var centerPosition = new google.maps.LatLng(0,0);
   var mapOptions = {
     center: centerPosition,
+    mapTypeControl: false,
     zoom: 1,
     streetViewControl: false,
     styles: paper_format
@@ -146,6 +147,7 @@ function initialize() {
 
   var panoramaOptions = {
     position: beginning,
+    addressControl: false,
     pov: {
       heading: 34,
       pitch: 10
