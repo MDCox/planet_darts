@@ -1,9 +1,114 @@
 var marker = null;
 var beginning = new google.maps.LatLng( gon.start_lat, gon.start_long );
+var scoreValue = gon.score;
 var path;
 
 function initialize() {
-  var paper_format = [
+  var gMapStyle = [
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#193341"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2c5a71"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#29768a"
+            },
+            {
+                "lightness": -37
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#406d80"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#406d80"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#3e606f"
+            },
+            {
+                "weight": 2
+            },
+            {
+                "gamma": 0.84
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "weight": 0.6
+            },
+            {
+                "color": "#1a3541"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2c5a71"
+            }
+        ]
+    }
+  ]
+  var mapStyle = [
     {
         "featureType": "water",
         "stylers": [
@@ -142,7 +247,7 @@ function initialize() {
     mapTypeControl: false,
     zoom: 1,
     streetViewControl: false,
-    styles: paper_format
+    styles: mapStyle
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
@@ -158,8 +263,10 @@ function initialize() {
 
   var guessMapOptions = {
     zoom: 2,
+    mapTypeControl: false,
     center: centerPosition,
-    streetViewControl: false
+    streetViewControl: false,
+    styles: gMapStyle
   };
 
   var gMap = new google.maps.Map(document.getElementById('guessMap'), guessMapOptions);
@@ -236,7 +343,6 @@ $(document).ready(function() {
         url: url,
         data: $('#new_score').serialize(),
         success: function (data) {
-
         }
       });
 

@@ -26,6 +26,17 @@
   z-index: 1;
 }
 
+#guessScore {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  float: right;
+  width: 100px;
+  height: 50px;
+  {background-color: ;}
+  z-index: 1;
+}
+
 #pano {
   position: fixed;
   top: 0px;
