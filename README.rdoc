@@ -1,6 +1,6 @@
 = Planet Darts
 
-Planet Darts is a web app clone of GeoGuessr that uses the Google Maps API. In addition to guessing the location of the google streetview, it also allows users to sign up and keep track of their scores and for them to create new geo locaitons for others to guess.
+Planet Darts is a web app clone of GeoGuessr that uses the Google Maps API. In addition to guessing the location of the google streetview, it also allows users to sign up and keep track of their scores and for them to create new geo locations for others to guess.
 
 
 == Features Used
