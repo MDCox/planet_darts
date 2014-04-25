@@ -11,9 +11,13 @@ Google Maps API
 
 ==== Authors
 Tara Nelson - talune
+
 Ben Birdsall - bwbirdsall
+
 Matt Cox - MDCox
+
 Alex Wood - roguespambot
+
 Vincent Rotter - fencedin
 
 
