@@ -146,6 +146,7 @@ function initialize() {
 
   var panoramaOptions = {
     position: beginning,
+    addressControl: false,
     pov: {
       heading: 34,
       pitch: 10
