@@ -13,4 +13,12 @@ class User < ActiveRecord::Base
 
     return (score_total / num_of_scores)
   end
+
+  def high_score
+    scores.order(:points).last.points
+  end
+
+  def low_score
+    scores.order(:points).first.points
+  end
 end
