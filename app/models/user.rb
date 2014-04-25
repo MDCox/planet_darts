@@ -15,14 +15,26 @@ class User < ActiveRecord::Base
       score_total += score.points
     end
 
-    return (score_total / num_of_scores)
+    if num_of_scores == 0
+      "No guesses"
+    else
+      (score_total / num_of_scores)
+    end
   end
 
   def high_score
-    scores.order(:points).last.points
+    if scores.length != 0
+      scores.order(:points).last.points
+    else
+      "None"
+    end
   end
 
   def low_score
-    scores.order(:points).first.points
+    if scores.length != 0
+      scores.order(:points).first.points
+    else
+      "None"
+    end
   end
 end
