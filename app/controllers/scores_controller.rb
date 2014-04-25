@@ -2,7 +2,7 @@ class ScoresController < ApplicationController
   def create
     points = calc_points(score_params[:coord1], score_params[:coord2])
     score = Score.new(points: points)
-    gon.score = score.points
+    @distance = calc_distance(score_params[:coord1], score_params[:coord2])
     current_user.scores << score
     respond_to do |f|
       f.js
