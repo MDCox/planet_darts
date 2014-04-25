@@ -5,6 +5,9 @@ class ScoresController < ApplicationController
     @distance = calc_distance(score_params[:coord1], score_params[:coord2])
     if current_user
       current_user.scores << score
+    else
+      @tempUser = User.new
+      @tempUser.scores << score
     end
     respond_to do |f|
       f.js
