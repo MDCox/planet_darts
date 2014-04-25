@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
   def create
     points = calc_points(score_params[:coord1], score_params[:coord2])
-    score = Score.new()
+    score = Score.new(points: points)
     current_user.scores << score
   end
 
@@ -26,6 +26,6 @@ private
 
   def calc_points(coord1, coord2)
     distance = calc_distance(coord1, coord2)
-    (24901 - distance)/100
+    (24901 - distance) / (distance / 10)
   end
 end
