@@ -13,7 +13,8 @@ class LocationsController < ApplicationController
     #     //no ok
     #   }
     # });
-    @location = Location.create()
+    @location = Location.create(latitude: params[:location][:latitude],
+                                longitude: params[:location][:longitude])
     redirect_to root_path
   end
 end
