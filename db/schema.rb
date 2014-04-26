@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140425221603) do
     t.datetime "updated_at"
   end
 
-  create_table "users", id: false, force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
